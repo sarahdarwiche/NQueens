@@ -35,7 +35,7 @@ void Search::read_from_stdin() {
     cin >> row; //rows start from 1
     cin >> column; //columns start from 1
     //our current queen has id = column-1 and exist in row-1
-    initial_state[column-1] = row-1;
+    initial_state[column - 1] = row - 1;
   }
   
 }
