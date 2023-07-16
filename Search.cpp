@@ -45,7 +45,7 @@ void Search::generate_random_problem(int size) {
 
   queen_count = size; 
   initial_state.resize(queen_count);
-  k = (rand() % (queen_count*queen_count-1)); 
+  k = (rand() % (queen_count*queen_count - 1)); 
   cout << "k "  << k << endl;
   
   random_state(initial_state);
@@ -55,8 +55,8 @@ void Search::generate_random_problem(int size) {
 void Search::print_to_stdout(vector<int> &state) {
 
   for(int queen = 0; queen < queen_count; queen++) {
-    int column = queen+1;
-    int row    = state[queen]+1;
+    int column = queen + 1;
+    int row    = state[queen] + 1;
     cout << row  << " " <<  column  << endl; 
   }
    
@@ -79,8 +79,8 @@ int Search::count_violations(vector<int> &state) { //make linear
 
   int violations= 0;
   
-  for(int current = 0; current < queen_count-1; current++) {
-  	for(int next = current+1; next < queen_count; next++) {
+  for(int current = 0; current < queen_count - 1; current++) {
+  	for(int next = current + 1; next < queen_count; next++) {
   		if(state[current] == state[next]) violations++;
   		if(abs(current-next) == abs(state[current] - state[next])) violations++;
   	}
@@ -113,7 +113,7 @@ int Search::update_violations(vector<int> &state, int violations, int queen, int
 Move* Search::get_best_neighbor() {
   Move* best_move = new Move;
   
-  int min_violations = queen_count * (queen_count -1);
+  int min_violations = queen_count * (queen_count - 1);
   
   for(int queen = 0; queen < queen_count; queen++) {
   	int original_row = state[queen]; //save state
